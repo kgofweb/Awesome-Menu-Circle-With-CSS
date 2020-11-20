@@ -1,0 +1,175 @@
+*, ::before, ::after {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background: #ddd;
+   height: 100vh;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-menu {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 300px;
+   height: 300px;
+   /* background: orange; */
+}
+
+.btn-menu {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 80px;
+   height: 80px;
+   background: #fff;
+   border-radius: 50%;
+   cursor: pointer;
+   z-index: 20;
+}
+
+.line {
+   width: 40px;
+   height: 5px;
+   border-radius: 5px;
+   background: #333;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   transition: all .3s ease-in-out;
+}
+
+.line::before {
+   content: "";
+   position: absolute;
+   bottom: 10px;
+   background: #333333;
+   width: 100%;
+   height: 5px;
+   border-radius: 5px;
+   transition: all .5s ease-in-out;
+}
+.line::after {
+   content: "";
+   position: absolute;
+   top: 10px;
+   background: #333333;
+   width: 100%;
+   height: 5px;
+   border-radius: 5px;
+}
+
+/* Faire la croix */
+.container-menu.active .line::before {
+   transform: translateY(10px) rotate(45deg);
+   transition: .5s ease-in-out;
+}
+.container-menu.active .line {
+   background: transparent;
+}
+.container-menu.active .line::after {
+   transform: translateY(-10px) rotate(-45deg);
+   transition: .5s ease-in-out;
+}
+
+.icon {
+   width: 25px;
+}
+
+.blob {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 80px;
+   height: 80px;
+   border-radius: 50%;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   transition: .5s ease-in-out;
+}
+
+.blob span {
+   font-size: small;
+   display: none;
+   transition: 0.5s;
+}
+
+.blob:hover span {
+   display: block;
+}
+
+.blob-1 {
+   background: #e0fefe;
+   transition: all 0.2s 0.1s ease-in-out;
+}
+.blob-2 {
+   background: #c7ceea;
+   transition: all 0.2s 0.2s ease-in-out;
+}
+.blob-3 {
+   background: #ffdac1;
+   transition: all 0.2s 0.3s ease-in-out;
+}
+.blob-4 {
+   background: #ff9aa2;
+   transition: all 0.2s 0.4s ease-in-out;
+}
+.blob-5 {
+   background: #ffffd8;
+   transition: all 0.2s 0.5s ease-in-out;
+}
+.blob-6 {
+   background: #b5ead7;
+   transition: all 0.2s 0.6s ease-in-out;
+}
+.blob-7 {
+   background: gold;
+   transition: all 0.2s 0.7s ease-in-out;
+}
+.blob-8 {
+   background: darksalmon;
+   transition: all 0.2s 0.8s ease-in-out;
+}
+
+
+/* Aniamtion */
+.container-menu.active .blob-1 {
+   left: 100%;
+}
+.container-menu.active .blob-2 {
+   top: 100%;
+}
+.container-menu.active .blob-3 {
+  left: 85%;
+  top: 85%;
+}
+.container-menu.active .blob-4 {
+   left: 0%;
+   top: 50%;
+}
+.container-menu.active .blob-5 {
+   top: 85%;
+   left: 15%;
+}
+.container-menu.active .blob-6 {
+   left: 15%;
+   top: 15%;
+}
+.container-menu.active .blob-7 {
+   left: 50%;
+   top: 0%;
+}
+.container-menu.active .blob-8 {
+   left: 85%;
+   top: 15%;
+}
